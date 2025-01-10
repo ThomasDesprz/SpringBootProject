@@ -50,6 +50,25 @@ This will:
 - Build the Spring Boot application into a Docker image.
 - Start the application container and a PostgreSQL database container.
 
+You can also use for the app and the db :
+
+```bash
+docker-compose up --build app db
+```
+
+And for the tests :
+
+```bash
+docker-compose up --build tests
+```
+And the check the result in ./target/surefire-reports
+
+Warning : Docker and hibernate doesn't function well together and you may need to run instead :
+
+```bash
+docker-compose up --build tests
+```
+
 ### Access the Application
 
 - API Endpoints: `http://localhost:9090/api/`
