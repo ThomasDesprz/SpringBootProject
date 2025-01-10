@@ -66,7 +66,7 @@ And the check the result in ./target/surefire-reports
 Warning : Docker and hibernate doesn't function well together and you may need to run instead :
 
 ```bash
-docker-compose up --build tests
+mvn test
 ```
 
 ### Access the Application
