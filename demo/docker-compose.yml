@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   app:
     build:
@@ -13,6 +14,7 @@ services:
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
     depends_on:
       - db
+    command: ["java", "-jar", "app.jar"] # Commande pour démarrer l'application
 
   db:
     image: postgres:15
@@ -37,6 +39,9 @@ services:
       SPRING_DATASOURCE_PASSWORD: mdp
     depends_on:
       - db
+    command: ["mvn", "test"] # Exécution des tests Maven
+    volumes:
+      - ./target/surefire-reports:/app/target/surefire-reports # Montre les résultats des tests en local
 
 volumes:
   postgres_data:
