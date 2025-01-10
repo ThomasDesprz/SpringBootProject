@@ -26,5 +26,17 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/teams
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: mdp
+    depends_on:
+      - db
+
 volumes:
   postgres_data:

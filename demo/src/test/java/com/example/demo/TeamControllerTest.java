@@ -1,7 +1,11 @@
-package com.example.demo.Controllers;
+package com.example.demo;
 
+import com.example.demo.Entities.Player;
 import com.example.demo.Entities.Team;
 import com.example.demo.Repositories.TeamRepository;
+import com.example.demo.Repositories.PlayerRepository;
+import com.example.demo.Controllers.TeamController;
+import com.example.demo.Controllers.PlayerController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

@@ -8,9 +8,13 @@ COPY . /app
 WORKDIR /app
 
 # Compiler l'application
-RUN mvn clean package -DskipTests
+RUN mvn clean package -DskipTests=true
 
-# Étape 2 : Utiliser une image Java pour exécuter l'application
+# Étape 2 : Test de l'application
+FROM build AS test
+RUN mvn test
+
+# Étape 3 : Utiliser une image Java pour exécuter l'application
 FROM eclipse-temurin:17-jdk-alpine
 
 # Copier le fichier JAR compilé depuis l'étape précédente

@@ -1,0 +1,8 @@
+com\example\demo\DemoApplication.class
+com\example\demo\Controllers\TeamController.class
+com\example\demo\Entities\Player.class
+com\example\demo\Controllers\PageController.class
+com\example\demo\Entities\Team.class
+com\example\demo\Controllers\PlayerController.class
+com\example\demo\Repositories\PlayerRepository.class
+com\example\demo\Repositories\TeamRepository.class
